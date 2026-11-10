@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  /* Identidad GavIA */
+  --color-navy: #123b5d;
+  --color-navy-900: #0c2a43;
+  --color-sea: #2878a8;
+  --color-sea-600: #1f6590;
+  --color-foam: #dceffa;
+  --color-sand: #f5f0e7;
+  --color-sand-200: #ebe3d4;
+  --color-ink: #263238;
+  --color-mist: #6b7a83;
+  --color-line: #e4e8eb;
+
+  /* Estados del plano */
+  --color-st-free: #2e9e6a;
+  --color-st-free-bg: #e5f5ec;
+  --color-st-busy: #c8423f;
+  --color-st-busy-bg: #fbe8e7;
+  --color-st-held: #d99a22;
+  --color-st-held-bg: #fdf3dc;
+  --color-st-off: #8a969e;
+  --color-st-off-bg: #eef0f2;
+
+  /* Tokens semánticos (paneles /empresa/alta, /empresa/ingresar y /plataforma) */
+  --color-background: #fafaf7;
+  --color-foreground: #263238;
+  --color-card: #ffffff;
+  --color-border: #e4e8eb;
+  --color-input: #ffffff;
+  --color-primary: #123b5d;
+  --color-primary-foreground: #ffffff;
+  --color-muted: #f5f0e7;
+  --color-muted-foreground: #6b7a83;
+  --color-accent: #dceffa;
+  --color-destructive: #c8423f;
+  --color-success: #2e9e6a;
+  --color-warning: #a8730f;
+  --color-info: #2878a8;
+  --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl: 0.875rem;
+
+  --animate-fade-up: fade-up 0.5s ease-out both;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer base {
+  html { color-scheme: light; }
+  body {
+    @apply bg-white text-ink antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-sea; }
+  ::selection { @apply bg-foam text-navy; }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+
+/* Patrón de olas sutil para el borde del mar en el plano */
+@utility sea-edge {
+  background-image: repeating-linear-gradient(90deg, transparent 0 18px, rgb(40 120 168 / 0.12) 18px 20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

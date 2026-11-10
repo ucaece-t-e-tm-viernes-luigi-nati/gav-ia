@@ -1,0 +1,25 @@
+# dependencias
+/node_modules
+
+# next.js
+/.next/
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+
+# varios
+.DS_Store
+*.pem
+npm-debug.log*
+
+# variables de entorno (nunca subirlas). Solo se versiona .env.example
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# dependencias de la referencia v2.1 (si alguien la instala)
+/referencia-v2.1/node_modules
+/referencia-v2.1/.next
