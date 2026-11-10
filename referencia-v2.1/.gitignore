@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env*.local
+.gavia-dev-db
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+.DS_Store
+
+.vercel
+.env*
